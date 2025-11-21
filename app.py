@@ -40,11 +40,17 @@ with tab2:
     for idx, feedback in enumerate(customer_feedback):
         st.write(f"{idx+1}. {feedback}")
 with tab3:
-    st.write("Content for Market Trends")
-    market_trends = {
-        "Eco-friendly products": "Increasing demand",
-        "Online shopping": "Continued growth",
-        "Subscription services": "Rising popularity"
-    }
-    for trend, status in market_trends.items():
-        st.write(f"{trend}: {status}")
+  with col1:
+    st.header("Q1 2024")
+    st.write("Revenue: $1.2M")
+  with col2:
+    st.header("Q2 2024")
+    st.write("Revenue: $1.5M")
+    # st.write("Content for Market Trends")
+    # market_trends = {
+    #     "Eco-friendly products": "Increasing demand",
+    #     "Online shopping": "Continued growth",
+    #     "Subscription services": "Rising popularity"
+    # }
+    # for trend, status in market_trends.items():
+    #     st.write(f"{trend}: {status}")
