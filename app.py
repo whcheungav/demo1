@@ -11,7 +11,7 @@ st.write(msg)
 
 col1, col2= st.columns(2)
 
-with coli:
+with col1:
   st.header("Q1 2024")
   st.write("Revenue: $1.2M")
 with col2:
