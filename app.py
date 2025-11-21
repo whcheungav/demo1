@@ -40,6 +40,7 @@ with tab2:
     for idx, feedback in enumerate(customer_feedback):
         st.write(f"{idx+1}. {feedback}")
 with tab3:
+  col1, col2= st.columns(2)
   with col1:
     st.header("Q1 2024")
     st.write("Revenue: $1.2M")
@@ -55,3 +56,9 @@ with tab3:
     # }
     # for trend, status in market_trends.items():
     #     st.write(f"{trend}: {status}")
+
+with st.expander("More Information"):
+    st.write("Additional details on data collection methods.")
+    st.write("##Data was collected through surveys and sales reports.")
+    st.write("-Additional details on data collection methods.")
+    st.write("#Data was collected through surveys and sales reports.")
