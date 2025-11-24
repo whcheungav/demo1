@@ -139,46 +139,96 @@
 
 #Data visualization
 
+# import streamlit as st
+# import numpy as np
+# import pandas as pd
+
+# # Step 3: Generate Random Sales Data
+# sales_data = np.random.rand(100) * 1000
+
+# # Step 4: Create a DataFrame
+# products = ['Product A', 'Product B', 'Product C', 'Product D', 'Product E']
+# sales = np.random.rand(5) * 1000
+# customers = np.random.randint(1, 100, size=5)
+
+# df = pd.DataFrame({
+#     'Product': products,
+#     'Sales': sales,
+#     'Customers': customers
+# })
+
+# # Step 5: Visualize Sales Data
+
+# # Display DataFrame using st.dataframe
+# st.markdown("### Product Sales and Customer Data")
+# st.dataframe(df)  # Interactive table with sorting and resizing
+
+# # Line Chart - Sales Over Time
+# st.markdown("### Sales Over Time")
+# st.line_chart(sales_data)
+
+# # Area Chart - Cumulative Sales
+# st.markdown("### Cumulative Sales")
+# st.area_chart(sales_data)
+
+# # Bar Chart - Sales by Product
+# st.markdown("### Sales by Product")
+# st.bar_chart(df[['Product', 'Sales']].set_index('Product'))
+
+# # Scatter Chart - Customer Engagement by Product
+# st.markdown("### Customer Engagement by Product")
+# st.scatter_chart(df[['Product', 'Customers']].set_index('Product'))
+
+#Business Form
+
 import streamlit as st
-import numpy as np
 import pandas as pd
 
-# Step 3: Generate Random Sales Data
-sales_data = np.random.rand(100) * 1000
+# Sample Data
+data = {
+    'Product': ['A', 'B', 'C', 'D', 'E'],
+    'Sales': [1200, 850, 950, 1100, 1300],
+    'Customers': [300, 400, 350, 450, 500]
+}
+df = pd.DataFrame(data)
 
-# Step 4: Create a DataFrame
-products = ['Product A', 'Product B', 'Product C', 'Product D', 'Product E']
-sales = np.random.rand(5) * 1000
-customers = np.random.randint(1, 100, size=5)
+# Display Sample Data
+st.write("### Sales Data")
+st.write(df)
 
-df = pd.DataFrame({
-    'Product': products,
-    'Sales': sales,
-    'Customers': customers
-})
+# Slider for Sales Range
+sales_range = st.slider("Select Sales Range", min_value=0, max_value=1500, value=(500, 1000))
 
-# Step 5: Visualize Sales Data
+# Filter Data Based on Sales Range
+filtered_df = df[(df['Sales'] >= sales_range[0]) & (df['Sales'] <= sales_range[1])]
+st.write("### Filtered Data")
+st.write(filtered_df)
 
-# Display DataFrame using st.dataframe
-st.markdown("### Product Sales and Customer Data")
-st.dataframe(df)  # Interactive table with sorting and resizing
+# Selectbox for Product Choice
+product_choice = st.selectbox("Select Product", filtered_df['Product'].unique())
 
-# Line Chart - Sales Over Time
-st.markdown("### Sales Over Time")
-st.line_chart(sales_data)
+# Text Input for User Name
+user_name = st.text_input("Enter your name")
 
-# Area Chart - Cumulative Sales
-st.markdown("### Cumulative Sales")
-st.area_chart(sales_data)
+# Text Area for Feedback
+feedback = st.text_area("Enter your feedback")
 
-# Bar Chart - Sales by Product
-st.markdown("### Sales by Product")
-st.bar_chart(df[['Product', 'Sales']].set_index('Product'))
+# Checkbox for Agreement
+agree = st.checkbox("I agree to the terms and conditions")
 
-# Scatter Chart - Customer Engagement by Product
-st.markdown("### Customer Engagement by Product")
-st.scatter_chart(df[['Product', 'Customers']].set_index('Product'))
+# File Uploader for Uploading Files
+uploaded_file = st.file_uploader("Upload a relevant file")
 
-
-
+# Button to Submit Feedback
+if st.button("Submit Feedback"):
+    if agree:
+        st.write("### Submitted Feedback")
+        st.write(f"**Name:** {user_name}")
+        st.write(f"**Product:** {product_choice}")
+        st.write(f"**Sales Range:** {sales_range}")
+        st.write(f"**Feedback:** {feedback}")
+        if uploaded_file is not None:
+            st.write("File uploaded successfully!")
+    else:
+        st.write("You must agree to the terms and conditions to submit feedback.")
 
