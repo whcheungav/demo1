@@ -77,27 +77,49 @@
 # placeholder.write("Data loading complete. Displaying business insights.")
 
 
-#24.11.2025
+#24.11.2025(Option menu)
+# import streamlit as st
+# from streamlit_option_menu import option_menu
+
+# st.title('Hello, Students!')
+# st.write('This is your Python Programming course.')
+
+# with st.sidebar:
+#     selected=option_menu(
+#         menu_title = "Menu",
+#         options = ["ISOM3400", "About", "Contact"],
+#         icons = ['house', 'cloud-upload','list-task'],
+#         menu_icon= "cast",
+#         default_index=0,
+#     )
+
+# if selected == "ISOM3400":
+#     st.title(f"Welcome to the {selected} page.")
+
+# if selected == "About":
+#     st.title(f"Welcome to the {selected} page.")
+
+# if selected == "Contact":
+#     st.title(f"Welcome to the {selected} page.")
+
+#Displaying Data elements
 import streamlit as st
-from streamlit_option_menu import option_menu
+import pandas as pd
+import os
 
-st.title('Hello, Students!')
-st.write('This is your Python Programming course.')
+# Get the current working directory
+current_directory = os.getcwd()
+# Define the file path
+file_path = os.path.join(current_directory, 'winequality-red.csv')
 
-with st.sidebar:
-    selected=option_menu(
-        menu_title = "Menu",
-        options = ["ISOM3400", "About", "Contact"],
-        icons = ['house', 'cloud-upload','list-task'],
-        menu_icon= "cast",
-        default_index=0,
-    )
+# Read the CSV file into a DataFrame
+df = pd.read_csv(file_path, delimiter=';')
 
-if selected == "ISOM3400":
-    st.title(f"Welcome to the {selected} page.")
+# Display the DataFrame in an interactive table
+st.write("Wine Quality Data")
+st.dataframe(df)
 
-if selected == "About":
-    st.title(f"Welcome to the {selected} page.")
 
-if selected == "Contact":
-    st.title(f"Welcome to the {selected} page.")
+
+
+
