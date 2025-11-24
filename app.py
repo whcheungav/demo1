@@ -89,7 +89,7 @@ with st.sidebar:
         menu_title = "Menu",
         options = ["Home", "About", "Contact"],
         icons = ['house', 'cloud-upload','list-task'],
-        menu_icon= "emoji-smile-fill",
+        menu_icon= "dick",
         default_index=0,
     )
 
