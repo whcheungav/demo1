@@ -282,6 +282,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 
 # # Title of the app
 # st.title("Business Data Dashboard")
@@ -306,14 +307,37 @@ import matplotlib.pyplot as plt
 # st.write(f"Months with sales above {sales_threshold}")
 # st.write(filtered_data)
 
-st.title("Hello")
-st.write("Hello")
-st.header("Hello")
-st.subheader("Hello")
-st.number_input("Hello",max_value=1000,min_value=0,value=5)
-input=st.selectbox("Hello",["Hi","Bye","Yo"])
-st.write(f"You have input: {input}")
+# st.title("Hello")
+# st.write("Hello")
+# st.header("Hello")
+# st.subheader("Hello")
+# st.number_input("Hello",max_value=1000,min_value=0,value=5)
+# input=st.selectbox("Hello",["Hi","Bye","Yo"])
+# st.write(f"You have input: {input}")
 
-if st.button("Hi"):
-  st.write("Bye")
-  st.success("Hello")
+# if st.button("Hi"):
+#   st.write("Bye")
+#   st.success("Hello")
+
+
+import math
+
+st.header("Scientific Functions")
+operation_sci = st.selectbox("Choose scientific operation", ["Square Root", "Power", "Sin", "Cos", "Tan"])
+
+value = st.number_input("Enter value", value=0.0)
+power = st.number_input("Enter power (if applicable)", value=2.0)
+
+if st.button("Calculate Scientific"):
+    if operation_sci == "Square Root":
+        result = math.sqrt(value)
+    elif operation_sci == "Power":
+        result = math.pow(value, power)
+    elif operation_sci == "Sin":
+        result = math.sin(math.radians(value))
+    elif operation_sci == "Cos":
+        result = math.cos(math.radians(value))
+    elif operation_sci == "Tan":
+        result = math.tan(math.radians(value))
+
+    st.success(f"Result: {result}")
