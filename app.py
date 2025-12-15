@@ -366,7 +366,7 @@ with tab2:
     st.write(f"{idx+1}. {insights}")
 with tab3:
   trend={"Ys":"a","No":"b","Bye":"c"}
-  for words, trends in trend:
+  for words, trends in trend.items():
     st.write(f"{words} : {trends}")
 
 with st.expander("More info"):
