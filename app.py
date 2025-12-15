@@ -310,10 +310,9 @@ st.title("Hello")
 st.write("Hello")
 st.header("Hello")
 st.number_input("Hello")
-input=st.selectbox("Hello")
+input=st.selectbox("Hello",["Hi","Bye","Yo"])
 st.write(f"You have input: {input}")
-option=st.selectbox("Choose",["Hi","Bye","Yo"])
-st.write(f"you have selected: {option}")
+
 if st.button("Hi"):
   st.write("Bye")
   st.success("Hello")
