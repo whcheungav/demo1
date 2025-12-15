@@ -309,7 +309,7 @@ import matplotlib.pyplot as plt
 st.title("Hello")
 st.write("Hello")
 st.header("Hello")
-st.number_input("Hello",value=36,max_value=1000,min_value=5)
+st.number_input("Hello",1000,0,5)
 input=st.selectbox("Hello",["Hi","Bye","Yo"])
 st.write(f"You have input: {input}")
 
