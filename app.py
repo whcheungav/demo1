@@ -309,10 +309,11 @@ import matplotlib.pyplot as plt
 st.title("Hello")
 st.write("Hello")
 st.header("Hello")
+st.subheader("Hello")
 st.number_input("Hello",max_value=1000,min_value=0,value=5)
 input=st.selectbox("Hello",["Hi","Bye","Yo"])
 st.write(f"You have input: {input}")
 
-st.button("Hi")
+if st.button("Hi")
   # st.write("Bye")
   # st.success("Hello")
