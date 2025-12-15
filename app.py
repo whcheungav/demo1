@@ -359,7 +359,7 @@ with col3:
 
 tab1,tab2,tab3=st.tabs(["SD","CI","MT"])
 with tab1:
-  for quarter, revenues in Revenue.items:
+  for quarter, revenues in Revenue.items():
     st.write(f"{quarter}:{revenues}")
 with tab2:
   for idx, insights in enumerate(customer_insights):
