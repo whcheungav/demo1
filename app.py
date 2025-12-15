@@ -1,89 +1,89 @@
 #21.11.2025
-import streamlit as st
-import time
+# import streamlit as st
+# import time
 
 
-# Title
-st.title("Business Dashboard with Streamlit Layouts")
+# # Title
+# st.title("Business Dashboard with Streamlit Layouts")
 
-# Objective
-msg="## Objective: To demonstrate the usage of columns, tabs, and dynamic containers in a business dashboard."
-st.write(msg)
+# # Objective
+# msg="## Objective: To demonstrate the usage of columns, tabs, and dynamic containers in a business dashboard."
+# st.write(msg)
 
-col1, col2= st.columns(2)
+# col1, col2= st.columns(2)
 
-with col1:
-  st.header("Q1 2024")
-  st.write("Revenue: $1.2M")
-with col2:
-    st.header("Q2 2024")
-    st.write("Revenue: $1.5M")
-
-
-tab1, tab2, tab3 = st.tabs("Sales Data", "Customer Insights", "Market Trends")
-with tab1:
-    st.write("Content for Sales Data")
-    sales_data = {
-        "Q1 2024": "$1.2M",
-        "Q2 2024": "$1.5M",
-        "Q3 2024": "$1.3M",
-        "Q4 2024": "$1.6M"
-    }
-    for quarter, revenue in sales_data.items():
-        st.write(f"{quarter}: {revenue}")
-with tab2:
-    st.write("Content for Customer Insights")
-    customer_feedback = [
-        "Great service!",
-        "Very satisfied with the product quality.",
-        "Quick delivery and excellent support."
-    ]
-    for idx, feedback in enumerate(customer_feedback):
-        st.write(f"{idx+1}. {feedback}")
-with tab3:
-  col1, col2= st.columns(2)
-  with col1:
-    st.header("Q1 2024")
-    st.write("Revenue: $1.2M")
-  with col2:
-    col1, col2= st.columns(2)
-    st.header("Q2 2024")
-    st.write("Revenue: $1.5M")
-    # st.write("Content for Market Trends")
-    # market_trends = {
-    #     "Eco-friendly products": "Increasing demand",
-    #     "Online shopping": "Continued growth",
-    #     "Subscription services": "Rising popularity"
-    # }
-    # for trend, status in market_trends.items():
-    #     st.write(f"{trend}: {status}")
-
-  with st.expander("More Information"):
-      st.write("Additional details on data collection methods.")
-      st.write("## Data was collected through surveys and sales reports.")
-      st.write("- Additional details on data collection methods.")
-      st.write("# Data was collected through surveys and sales reports.")
+# with col1:
+#   st.header("Q1 2024")
+#   st.write("Revenue: $1.2M")
+# with col2:
+#     st.header("Q2 2024")
+#     st.write("Revenue: $1.5M")
 
 
-# Dynamic Containers
-placeholder = st.empty()
+# tab1, tab2, tab3 = st.tabs(["Sales Data", "Customer Insights", "Market Trends"])
+# with tab1:
+#     st.write("Content for Sales Data")
+#     sales_data = {
+#         "Q1 2024": "$1.2M",
+#         "Q2 2024": "$1.5M",
+#         "Q3 2024": "$1.3M",
+#         "Q4 2024": "$1.6M"
+#     }
+#     for quarter, revenue in sales_data.items():
+#         st.write(f"{quarter}: {revenue}")
+# with tab2:
+#     st.write("Content for Customer Insights")
+#     customer_feedback = [
+#         "Great service!",
+#         "Very satisfied with the product quality.",
+#         "Quick delivery and excellent support."
+#     ]
+#     for idx, feedback in enumerate(customer_feedback):
+#         st.write(f"{idx+1}. {feedback}")
+# with tab3:
+#   col1, col2= st.columns(2)
+#   with col1:
+#     st.header("Q1 2024")
+#     st.write("Revenue: $1.2M")
+#   with col2:
+#     col1, col2= st.columns(2)
+#     st.header("Q2 2024")
+#     st.write("Revenue: $1.5M")
+#     # st.write("Content for Market Trends")
+#     # market_trends = {
+#     #     "Eco-friendly products": "Increasing demand",
+#     #     "Online shopping": "Continued growth",
+#     #     "Subscription services": "Rising popularity"
+#     # }
+#     # for trend, status in market_trends.items():
+#     #     st.write(f"{trend}: {status}")
 
-# Simulate loading data and updating the placeholder
-for i in range(5):
-    placeholder.write(f"Loading data... {i*20}% complete")
-    time.sleep(1)
+#   with st.expander("More Information"):
+#       st.write("Additional details on data collection methods.")
+#       st.write("## Data was collected through surveys and sales reports.")
+#       st.write("- Additional details on data collection methods.")
+#       st.write("# Data was collected through surveys and sales reports.")
 
-# Once loading is complete, display the final message
-placeholder.write("Data loading complete. Displaying business insights.")
-# Display dynamic business insights
-business_insights = [
-    "Revenue increased by 15% in Q1 2024.",
-    "Customer satisfaction improved by 10%.",
-    "Market trends show a growing demand for eco-friendly products."
-]
-for insight in business_insights:
-    placeholder.write(insight)
-    time.sleep(2)
+
+# # Dynamic Containers
+# placeholder = st.empty()
+
+# # Simulate loading data and updating the placeholder
+# for i in range(5):
+#     placeholder.write(f"Loading data... {i*20}% complete")
+#     time.sleep(1)
+
+# # Once loading is complete, display the final message
+# placeholder.write("Data loading complete. Displaying business insights.")
+# # Display dynamic business insights
+# business_insights = [
+#     "Revenue increased by 15% in Q1 2024.",
+#     "Customer satisfaction improved by 10%.",
+#     "Market trends show a growing demand for eco-friendly products."
+# ]
+# for insight in business_insights:
+#     placeholder.write(insight)
+#     time.sleep(2)
 
 
 #24.11.2025(Option menu)
@@ -339,3 +339,52 @@ import math
 #     if Target>100000:
 #         st.write("You have set ambitious target!")
 #     st.success("Data input complete")
+
+st.title("Business Performance Dashboard")
+st.write("Objective: Provide insights into revenue, customer feedback, and market trends.")
+Revenue={"Q1":"1.2M",
+        "Q2":"1.5M",
+        "Q3":"1.3M"}
+customer_insights=["good","ho","very good"]
+col1,col2,col3=st.columns(3)
+with col1:
+  st.header("Q1")
+  st.write("Revenue=1.2M")
+with col2:
+  st.header("Q2")
+  st.write("Revenue=1.5M")
+with col3:
+  st.header("Q3")
+  st.write("Revenue=1.3M")
+
+tab1,tab2,tab3=st.tabs(["SD","CI","MT"])
+with tab1:
+  for quarter, revenues in Revenue.items:
+    st.write(f"{quarter}:{revenues}")
+with tab2:
+  for idx, insights in enumerate(customer_insights):
+    st.write(f"{idx+1}. {insights}")
+with tab3:
+  trend={"Ys":"a","No":"b","Bye":"c"}
+  for words, trends in trend:
+    st.write(f"{words} : {trends}")
+
+with st.expander("More info"):
+  st.write("hi")
+
+placeholder=st.empty()
+
+for i in range(5):
+  placeholder.wrtie(f"Loading progress: {i+20%}%")
+  time.sleep(1)
+st.write("Loading complete")
+message=["Hi","Bye","Yo"]
+for msg in message:
+  placeholder.wrtie(f"{msg}")
+  time.sleep(3)
+
+
+
+quarter_option=st.selectbox("Please select the quater you want", ["Q1","Q2","Q3","Q4"])
+
+
