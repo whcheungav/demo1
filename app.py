@@ -375,7 +375,7 @@ with st.expander("More info"):
 placeholder=st.empty()
 
 for i in range(5):
-  placeholder.wrtie(f"Loading progress: {i+20}%")
+  placeholder.write(f"Loading progress: {i+20}%")
   time.sleep(1)
 placeholder.write("Loading complete")
 message=["Hi","Bye","Yo"]
