@@ -381,7 +381,7 @@ for i in range(5):
 placeholder.write("Loading complete")
 message=["Hi","Bye","Yo"]
 for msg in message:
-  placeholder.wrtie(f"{msg}")
+  placeholder.write(f"{msg}")
   time.sleep(3)
 
 
