@@ -325,7 +325,8 @@ st.write("Please enter the monthly sales target and select the region")
 Target=st.number_input("Enter Monthly Sales Target (in USD):", min_value=0, value=50000)
 Region=st.selectbox("Select Region:",["N","E","S","W"])
 if st.button("submit"):
-    st.write(f"Target: {Target}\n Region: {Region}")
+    st.write(f'''Target: {Target} 
+    Region: {Region}''')
     if Target>100000:
         st.write("You have set ambitious target!")
     st.success("Data input complete")
