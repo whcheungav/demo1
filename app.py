@@ -283,25 +283,37 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Title of the app
-st.title("Business Data Dashboard")
+# # Title of the app
+# st.title("Business Data Dashboard")
 
-# Introduction text
-st.write("This dashboard helps visualize sales data over time.")
+# # Introduction text
+# st.write("This dashboard helps visualize sales data over time.")
 
-# Sample data
-date_rng = pd.date_range(start='1/1/2023', end='12/31/2023', freq='M')
-df = pd.DataFrame(date_rng, columns=['date'])
-df['sales'] = np.random.randint(100, 500, size=(len(date_rng)))
+# # Sample data
+# date_rng = pd.date_range(start='1/1/2023', end='12/31/2023', freq='M')
+# df = pd.DataFrame(date_rng, columns=['date'])
+# df['sales'] = np.random.randint(100, 500, size=(len(date_rng)))
 
-# Data visualization with Streamlit
-st.subheader("Monthly Sales Data")
-st.line_chart(df.set_index('date'))
+# # Data visualization with Streamlit
+# st.subheader("Monthly Sales Data")
+# st.line_chart(df.set_index('date'))
 
-# Adding a slider for user input
-sales_threshold = st.slider("Sales threshold", 100, 500, 300)
+# # Adding a slider for user input
+# sales_threshold = st.slider("Sales threshold", 100, 500, 300)
 
-# Filtering and displaying data based on user input
-filtered_data = df[df['sales'] >= sales_threshold]
-st.write(f"Months with sales above {sales_threshold}")
-st.write(filtered_data)
+# # Filtering and displaying data based on user input
+# filtered_data = df[df['sales'] >= sales_threshold]
+# st.write(f"Months with sales above {sales_threshold}")
+# st.write(filtered_data)
+
+st.title("Hello")
+st.write("Hello")
+st.header("Hello")
+st.number_input("Hello")
+input=st.selectbox("Hello")
+st.write(f"You have input: {input}")
+option=st.selectbox("Choose",["Hi","Bye","Yo"])
+st.write(f"you have selected: {option}")
+if st.button("Hi"):
+  st.write("Bye")
+  st.success("Hello")
