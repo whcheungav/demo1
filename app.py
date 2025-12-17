@@ -478,7 +478,7 @@ filtered_df = df[(df['Sales'] >= sales_range[0]) & (df['Sales'] <= sales_range[1
 product_choice = st.selectbox("Select Product", filtered_df['Product'].unique())
 
 # Step 6: Create a Form for Feedback Submission
-with st.form():
+with st.form(key="feedback_form"):
     product_id = st.text_input("Enter Product ID")
     feedback = st.text_area("Enter your feedback")
     submit_button = st.form_submit_button("Submit Feedback")
