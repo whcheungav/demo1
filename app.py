@@ -467,6 +467,7 @@ df = pd.DataFrame(data)
 # Step 2: Display the Sample Data at the Top
 st.write("### Sample Data")
 st.write(df)
+st.write({"Name": "Alice", "Age": 30})
 
 # Step 3: Create a Slider for Selecting a Sales Range
 sales_range = st.slider("Select Sales Range", min_value=0, max_value=1500, value=(500, 1000))
@@ -490,8 +491,9 @@ def submit_feedback():
     st.write(f"**Sales Range:** {sales_range}")
     st.write(f"**Product ID:** {product_id}")
     st.write(f"**Feedback:** {feedback}")
-        st.write({"Name": "Alice", "Age": 30})
+
 
 # Step 8: Check if the Submit Button is Clicked
 if submit_button:
     submit_feedback()
+
