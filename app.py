@@ -469,6 +469,7 @@ st.write("### Sample Data")
 st.write(df)
 st.write({"Name": "Alice", "Age": 30})
 st.write([12,13,16])
+st.write((12,15,18))
 
 # Step 3: Create a Slider for Selecting a Sales Range
 sales_range = st.slider("Select Sales Range", min_value=0, max_value=1500, value=(500, 1000))
