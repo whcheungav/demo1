@@ -490,6 +490,7 @@ def submit_feedback():
     st.write(f"**Sales Range:** {sales_range}")
     st.write(f"**Product ID:** {product_id}")
     st.write(f"**Feedback:** {feedback}")
+        st.write({"Name": "Alice", "Age": 30})
 
 # Step 8: Check if the Submit Button is Clicked
 if submit_button:
